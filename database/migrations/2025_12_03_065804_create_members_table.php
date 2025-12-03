@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique();
             $table->string('member_code')->unique(); // MBR-00001
             $table->string('name');
             $table->string('email')->unique()->nullable();
@@ -24,6 +23,7 @@ return new class extends Migration
             $table->foreignId('member_tier_id')->constrained()->onDelete('cascade');
             $table->integer('total_points')->default(0);
             $table->decimal('total_spent', 15, 2)->default(0);
+            $table->integer('total_transactions')->default(0);
             $table->timestamp('registered_at');
             $table->boolean('is_active')->default(true);
             $table->timestamps();

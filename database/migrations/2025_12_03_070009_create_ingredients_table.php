@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('branch_id')->constrained()->onDelete('cascade');
             $table->string('code')->unique();
             $table->string('name');
-            $table->string('unit'); // kg, gram, liter, pcs
+            $table->string('unit'); // kg, gram, liter, ml, pcs
             $table->decimal('stock_quantity', 15, 3)->default(0);
             $table->decimal('min_stock', 15, 3)->default(0); // alert threshold
             $table->decimal('unit_price', 15, 2)->default(0); // harga per unit

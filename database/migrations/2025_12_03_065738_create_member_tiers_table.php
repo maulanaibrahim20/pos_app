@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('name'); // Bronze, Silver, Gold, Platinum
             $table->integer('min_points')->default(0);
             $table->integer('max_points')->nullable();
-            $table->decimal('discount_percentage', 5, 2)->default(0);
-            $table->decimal('point_multiplier', 5, 2)->default(1.00); // 1.5x points
+            $table->decimal('discount_percentage', 5, 2)->default(0); // Diskon untuk tier ini
+            $table->decimal('point_percentage', 5, 2)->default(1.00); // Persentase point dari total belanja (1% = 1.00)
             $table->text('benefits')->nullable(); // JSON: ["Free delivery", "Birthday gift"]
+            $table->string('color')->nullable(); // Untuk UI (bronze, silver, gold color)
             $table->timestamps();
         });
     }

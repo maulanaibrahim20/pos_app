@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('payment_methods', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique(); // CASH, QRIS, DEBIT, CREDIT, GOPAY, OVO
+            $table->string('name');
+            $table->string('icon')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->boolean('requires_approval')->default(false); // untuk payment gateway
+            $table->decimal('fee_percentage', 5, 2)->default(0);
+            $table->decimal('fee_fixed', 15, 2)->default(0);
             $table->timestamps();
         });
     }

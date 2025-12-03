@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('ingredient_id')->constrained()->onDelete('cascade');
             $table->decimal('quantity', 15, 3); // jumlah bahan yang dibutuhkan
             $table->string('unit');
+            $table->decimal('cost', 15, 2)->default(0); // Biaya bahan untuk quantity ini
             $table->timestamps();
 
             $table->unique(['product_id', 'ingredient_id']);

@@ -29,6 +29,7 @@ return new class extends Migration
             $table->decimal('change_amount', 15, 2)->default(0);
             $table->integer('points_earned')->default(0);
             $table->integer('points_redeemed')->default(0);
+            $table->decimal('point_percentage_used', 5, 2)->nullable(); // Persentase point yang didapat
             $table->enum('status', ['pending', 'paid', 'cancelled', 'refunded'])->default('pending');
             $table->text('notes')->nullable();
             $table->timestamp('paid_at')->nullable();
