@@ -15,6 +15,10 @@
     <title>Fastkart - Dashboard</title>
 
     @include('layouts.admin.components.style-css')
+    <link href="{{ asset('custom/css/backend.css') }}" rel="stylesheet" />
+    <link href="{{ asset('custom/css/datatable-lokal.min.css') }}" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -53,17 +57,19 @@
     <!-- page-wrapper End-->
 
     <!-- Modal Start -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal modal-blur fade" id="ajaxModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-body">
-                    <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-                    <p>Are you sure you want to log out?</p>
+                <div class="modal-header">
+                    <h5 class="modal-title">@yield('modal_title')</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="button-box">
-                        <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-message"></div>
+                    <div class="modal_content">
+                        <center><img id="img-loader" src="{{ url('custom/svg/loading.svg') }}" height="40"
+                                alt="Loading.." /></center>
                     </div>
                 </div>
             </div>
@@ -72,6 +78,15 @@
     <!-- Modal End -->
 
     @include('layouts.admin.components.style-js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('custom/js/jquery.form.min.js') }}"></script>
+
+    <script src="{{ asset('custom/js/backend.js') }}"></script>
+    <script src="{{ asset('addons/bootstrap-multiselect/js/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ asset('custom/js/datatable-lokal.min.js') }}"></script>
+
+
+
 </body>
 
 </html>

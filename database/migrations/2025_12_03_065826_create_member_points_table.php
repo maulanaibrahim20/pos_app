@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('member_id')->constrained()->onDelete('cascade');
             $table->foreignId('transaction_id')->nullable()->constrained('transactions')->onDelete('set null');
-            $table->foreignId('donation_request_id')->nullable()->constrained()->onDelete('set null');
+            // $table->foreignId('donation_request_id')->nullable()->constrained()->onDelete('set null');
             $table->integer('points'); // bisa positif (earning) atau negatif (redeem/donation)
             $table->decimal('percentage_used', 5, 2)->nullable(); // Persentase yang digunakan saat earning
             $table->decimal('transaction_amount', 15, 2)->nullable(); // Total transaksi saat earning

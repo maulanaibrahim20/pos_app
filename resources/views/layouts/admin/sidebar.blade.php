@@ -30,9 +30,17 @@
                       <li class="back-btn"></li>
 
                       <li class="sidebar-list">
-                          <a class="sidebar-link sidebar-title link-nav" href="index.html">
+                          <a class="sidebar-link sidebar-title link-nav" href="{{ route('dashboard') }}">
                               <i class="ri-home-line"></i>
                               <span>Dashboard</span>
+                          </a>
+                      </li>
+
+                      <li class="sidebar-list ">
+                          <a class="sidebar-link sidebar-title link-nav {{ Request::segment('2') == 'branch' ? 'active' : '' }}"
+                              href="{{ route('branch.index') }}">
+                              <i class="ri-building-line"></i>
+                              <span>Outlet Branch</span>
                           </a>
                       </li>
 
@@ -64,22 +72,6 @@
 
                               <li>
                                   <a href="add-new-category.html">Add New Category</a>
-                              </li>
-                          </ul>
-                      </li>
-
-                      <li class="sidebar-list">
-                          <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                              <i class="ri-list-settings-line"></i>
-                              <span>Attributes</span>
-                          </a>
-                          <ul class="sidebar-submenu">
-                              <li>
-                                  <a href="attributes.html">Attributes</a>
-                              </li>
-
-                              <li>
-                                  <a href="add-new-attributes.html">Add Attributes</a>
                               </li>
                           </ul>
                       </li>
@@ -146,13 +138,6 @@
                                   <a href="create-coupon.html">Create Coupon</a>
                               </li>
                           </ul>
-                      </li>
-
-                      <li class="sidebar-list">
-                          <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
-                              <i class="ri-star-line"></i>
-                              <span>Product Review</span>
-                          </a>
                       </li>
 
                       <li class="sidebar-list">

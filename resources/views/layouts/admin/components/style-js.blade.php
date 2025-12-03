@@ -1,5 +1,7 @@
 <!-- latest js -->
-<script src="{{ url('/assets') }}/js/jquery-3.6.0.min.js"></script>
+{{-- <script src="{{ url('/assets') }}/js/jquery-3.6.0.min.js"></script> --}}
+<script src="{{ asset('custom/js/jquery_3.6.0.min.js') }}"></script>
+
 
 <!-- Bootstrap js -->
 <script src="{{ url('/assets') }}/js/bootstrap/bootstrap.bundle.min.js"></script>
